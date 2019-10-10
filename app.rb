@@ -16,11 +16,7 @@ post '/' do
   if game.compararPartida @step - 1, params["pais"].downcase
     @@resultado = @@resultado + 1
   end
-  if @step == 1
-    @capital = 'Lima'
-  else
-    @capital = 'Buenos Aires'  
-  end
+  @capital = game.capital @step
   @step = @step + 1
 
   if @step == 3
