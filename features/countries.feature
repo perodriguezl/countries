@@ -10,3 +10,8 @@ Escenario: Valida que el usuario introduce Argentina correctamente
   Dado que voy a la portada
   Cuando introduce "Argentina"
   Entonces veo "Resultado: OK"
+
+Escenario: Valida que el usuario introduce noArgentina
+  Dado que voy a la portada
+  Cuando introduce "NoArgentina"
+  Entonces veo "Resultado: FAIL"
