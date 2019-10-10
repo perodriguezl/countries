@@ -11,3 +11,12 @@ Cuando(/^introduce "(.*?)"$/) do |arg1|
   click_button("enviar")
 end
 
+Cuando(/^respondo la Pregunta (\d+)$/) do |arg1|
+  fill_in("pais", :with => "Cualquier Cosa")
+  click_button("enviar")
+end
+
+Dado(/^que voy a la portada en step (\d+)$/) do |arg1|
+  visit "/?step=#{arg1}"
+end
+
