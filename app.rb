@@ -10,5 +10,5 @@ post '/resultado' do
   else
     @value = 'FAIL'  
   end  
-  erb :resultado
+	erb :resultado
 end
