@@ -6,12 +6,16 @@ get '/' do
   @step = params["step"].to_i
   @capital = game.capital @step
   @step = @step + 1
+  @@resultado = 0
   erb :portada
 end
 
 post '/' do
   game = Juego.new
   @step = params["step"].to_i
+  if game.compararPartida @step - 1, params["pais"].downcase
+    @@resultado = @@resultado + 1
+  end
   if @step == 1
     @capital = 'Lima'
   else
@@ -19,7 +23,11 @@ post '/' do
   end
   @step = @step + 1
 
-  erb :portada
+  if @step == 3
+    erb :resultado
+  else
+    erb :portada
+  end
 end
 
 post '/resultado' do
