@@ -20,3 +20,8 @@ Escenario: Valida que el usuario no introduce valor
   Dado que voy a la portada
   Cuando introduce ""
   Entonces veo "Resultado: FAIL"
+
+Escenario: Valida que el usuario introduce ArgEntiNa, resulta OK
+  Dado que voy a la portada
+  Cuando introduce "ArgEntiNa"
+  Entonces veo "Resultado: OK"

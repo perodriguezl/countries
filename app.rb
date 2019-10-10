@@ -5,7 +5,7 @@ get '/' do
 end
 
 post '/resultado' do
-  if params["pais"] == 'Argentina'
+  if params["pais"].downcase == 'Argentina'.downcase
     @value = 'OK'
   else
     @value = 'FAIL'  
