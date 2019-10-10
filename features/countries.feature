@@ -11,7 +11,7 @@ Escenario: Contesta la primera pregunta y le muestra la segunda
   Cuando respondo la Pregunta 1
   Entonces veo "Pregunta #2"
 
-Escenario: Valida que el en step 2 muestra Lima
-  Dado que voy a la portada en step 2
+Escenario: Valida que el en step 1 muestra Lima
+  Dado que voy a la portada en Pregunta 2
   Entonces veo "Lima"
 

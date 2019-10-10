@@ -1,24 +1,23 @@
 require 'sinatra'
+require "./lib/juego.rb"
 
 get '/' do
-  @@resultado = 0
-  if params["step"].nil?
-    @step = 1
-    @capital = 'Buenos Aires'
-  else
-    @step = params["step"].to_i + 1
-    @capital = 'Lima'  
-  end
+  game = Juego.new
+  @step = params["step"].to_i
+  @capital = game.capital @step
+  @step = @step + 1
   erb :portada
 end
 
 post '/' do
-  @step = params["step"].to_i + 1 
-  if @step == 2
+  game = Juego.new
+  @step = params["step"].to_i
+  if @step == 1
     @capital = 'Lima'
   else
     @capital = 'Buenos Aires'  
   end
+  @step = @step + 1
 
   erb :portada
 end

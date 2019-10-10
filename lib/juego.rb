@@ -2,7 +2,7 @@ class Juego
 	def initialize
 		@partidaActual = 0
 		@paises = ["argentina", "peru", "uruguay", "chile", "brasil"]
-		@capitales = ["buenos aires", "lima", "montevideo", "santiago", "brasilia"]
+		@capitales = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"]
 		@estado = "jugando"
 	end
 
@@ -16,6 +16,10 @@ class Juego
 
 	def capitales
 		return @capitales
+	end
+
+	def capital indice
+		return @capitales[indice]
 	end
 
 	def estado

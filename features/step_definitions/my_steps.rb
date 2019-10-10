@@ -16,7 +16,7 @@ Cuando(/^respondo la Pregunta (\d+)$/) do |arg1|
   click_button("enviar")
 end
 
-Dado(/^que voy a la portada en step (\d+)$/) do |arg1|
+Dado(/^que voy a la portada en Pregunta (\d+)$/) do |arg1|
+  arg1 = arg1.to_i - 1
   visit "/?step=#{arg1}"
 end
-
