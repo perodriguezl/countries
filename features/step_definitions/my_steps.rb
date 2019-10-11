@@ -1,4 +1,6 @@
 Dado(/^que voy a la portada$/) do
+  @@game.test_mode true
+  @@game.reset
   visit "/"
 end
 
@@ -20,3 +22,5 @@ Cuando(/^respondo Pregunta con "(.*?)"$/) do |respuesta|
   fill_in("pais", :with => respuesta)
   click_button("enviar")
 end
+
+

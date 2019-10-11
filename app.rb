@@ -1,8 +1,9 @@
 require 'sinatra'
 require "./lib/juego.rb"
 
+@@game = Juego.new
+
 get '/' do
-  @@game = Juego.new
   @step = params["step"].to_i
   @capital = @@game.get_capital
   @step = @step + 1
