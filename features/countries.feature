@@ -27,7 +27,7 @@ Escenario: Contesta todas las preguntas correctamente y muestra resultado 5
   Y respondo Pregunta con "Chile"
   Y respondo Pregunta con "Uruguay"
   Y respondo Pregunta con "Brasil"
-  Entonces veo "Resultado: 100"
+  Entonces veo "100"
 
 Escenario: Contesta todas las preguntas incorrectamente y muestra resultado 0
   Dado que voy a la portada
@@ -36,7 +36,7 @@ Escenario: Contesta todas las preguntas incorrectamente y muestra resultado 0
   Y respondo Pregunta con " "
   Y respondo Pregunta con "$"
   Y respondo Pregunta con "Argentina"
-  Entonces veo "Resultado: 0"
+  Entonces veo "0"
 
 Escenario: Contesta todas las preguntas incorrectamente y muestra resultado 3
   Dado que voy a la portada
@@ -45,7 +45,7 @@ Escenario: Contesta todas las preguntas incorrectamente y muestra resultado 3
   Y respondo Pregunta con "Chile"
   Y respondo Pregunta con "Chile"
   Y respondo Pregunta con "Brasil"
-  Entonces veo "Resultado: 60"
+  Entonces veo "60"
 
 Escenario: Contesta la primera, segunda, tercera, cuarta y quinta pregunta, pasa a resultado
   Dado que voy a la portada

@@ -31,4 +31,3 @@ Cuando(/^hago reinicio$/) do
   click_link("Reiniciar")
 end
 
-

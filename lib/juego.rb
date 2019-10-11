@@ -73,8 +73,18 @@ class Juego
   end
 
 def resultado_final
-	return (@resultado *100) / @level
+  @porcentaje = (@resultado * 100) / @level
+
+  if @porcentaje < 61
+    @imagen = "https://cdn.memegenerator.es/imagenes/memes/full/28/37/28372415.jpg"
+  end
+	return @porcentaje
 end
+
+def imagen
+  return @imagen
+end
+
 
 	
 end
