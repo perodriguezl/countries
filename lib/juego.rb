@@ -45,6 +45,10 @@ class Juego
     return @resultado
   end
 
+ def test_step
+    return @test_step
+  end
+
   def get_capital
     puts @capitales_otras
     if @test_mode == true
@@ -56,6 +60,10 @@ class Juego
       @capitales_otras.delete(capital)
       return capital
     end
+  end
+
+  def capitales_otras
+	return @capitales_otras
   end
 	
 end

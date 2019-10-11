@@ -45,6 +45,48 @@ describe "Countries" do
 	expect( pregunta1  ).not_to eq pregunta2
  end
 
+ it "Resetear Juego en modo Test para resultado igual a 0" do
+	juego = Juego.new
+	juego.test_mode true
+	juego.puntuar "buenos aires", "argentina"
+	juego.reset
+	expect( juego.puntos  ).to eq 0 
+ end
+
+  it "Resetear Juego en modo Test para test_step igual a 0" do
+	juego = Juego.new
+	juego.test_mode true
+	juego.puntuar "buenos aires", "argentina"
+	juego.reset
+	expect( juego.test_step  ).to eq 0 
+ end
+
+   it "Resetear Juego en modo Test para capitales_otras" do
+	juego = Juego.new
+	juego.test_mode true
+	@capitales_otras_test = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
+	juego.puntuar "buenos aires", "argentina"
+	juego.reset
+	expect( @capitales_otras_test  - juego.capitales_otras).to eq [] 
+  end
+
+ it "Resetear Juego para mantener resultado igual para obtener un resultado" do
+	juego = Juego.new
+	juego.test_mode false
+	juego.puntuar "buenos aires", "argentina"
+	juego.reset
+	expect( juego.puntos  ).to eq 1
+ end
+
+   it "Resetear Juego para mantener resultado igual para obtener un resultado" do
+	juego = Juego.new
+	juego.test_mode false
+	@capitales_otras_test = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
+	juego.get_capital
+	juego.reset
+	expect( @capitales_otras_test - juego.capitales_otras ).not_to eq [] 
+  end
+
 end
 
 
