@@ -3,10 +3,15 @@ class Juego
 		@paises = ["Argentina", "peru", "uruguay", "chile", "brasil"].map(&:downcase)
 		@capitales = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
     @resultado = 0
+    @preguntadas = []
 	end
 
 	def capital indice
 		return @capitales[indice]
+	end
+
+	def preguntadas
+		return @preguntadas
 	end
 
 	def compararPartida indice, palabra
@@ -15,6 +20,7 @@ class Juego
 
   def puntuar capital, pais
     index = @capitales.index(capital.downcase)
+    @preguntadas.push(capital.downcase)
     if !index.nil? && @paises[index] == pais.downcase
       @resultado += 1
     end

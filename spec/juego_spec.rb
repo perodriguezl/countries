@@ -26,6 +26,12 @@ describe "Countries" do
 	expect( juego.puntos  ).to eq 1
  end
 
+ it "Verificar que se guardan las preguntas realizadas" do
+	juego = Juego.new
+	juego.puntuar "buenos aires", "argentina"
+	expect( juego.preguntadas  ).to eq ["buenos aires"]
+ end
+
 end
 
 
