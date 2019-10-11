@@ -17,7 +17,7 @@ post '/' do
   @capital = @@game.get_capital
   @step = @step + 1
 
-  if @step == 6
+  if @step == @@game.level + 1
     erb :resultado
   else
     erb :portada

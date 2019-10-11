@@ -17,12 +17,12 @@ describe "Countries" do
  it "Obtener Pais de Capital" do
 	juego = Juego.new
 	pais = juego.capital 0
-	expect( pais  ).to eq "buenos aires"
+	expect( pais  ).to eq "ARGE0001.GIF"
  end
 
  it "Verificar capital y resultado" do
 	juego = Juego.new
-	juego.puntuar "buenos aires", "argentina"
+	juego.puntuar "ARGE0001.GIF", "argentina"
 	expect( juego.puntos  ).to eq 1
  end
 
@@ -64,7 +64,7 @@ describe "Countries" do
    it "Resetear Juego en modo Test para capitales_otras" do
 	juego = Juego.new
 	juego.test_mode true
-	@capitales_otras_test = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
+	@capitales_otras_test = ["ARGE0001.GIF", "PERU0001.GIF", "CHIL0001.GIF", "URGY0001.GIF", "BRAZ0001.GIF", "NORW0001.GIF", "NGRA0001.GIF", "GREC0001.GIF", "BULG0001.GIF", "ICEL0001.GIF"]
 	juego.puntuar "buenos aires", "argentina"
 	juego.reset
 	expect( @capitales_otras_test  - juego.capitales_otras).to eq [] 
@@ -74,7 +74,7 @@ describe "Countries" do
 	juego = Juego.new
 	juego.test_mode false
 	juego.reset
-	juego.puntuar "buenos aires", "argentina"
+	juego.puntuar "ARGE0001.GIF", "argentina"
 	expect( juego.puntos  ).to eq 1
  end
 

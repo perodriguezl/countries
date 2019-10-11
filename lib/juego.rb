@@ -1,12 +1,13 @@
 class Juego
 	def initialize
-		@paises = ["Argentina", "peru", "uruguay", "chile", "brasil"].map(&:downcase)
-		@capitales = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
-		@capitales_otras = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase).shuffle
+		@paises = ["Argentina", "peru", "chile", "uruguay", "brasil", "noruega", "nigeria", "grecia", "bulgaria", "islandia"].map(&:downcase)
+		@capitales = ["ARGE0001.GIF", "PERU0001.GIF", "CHIL0001.GIF", "URGY0001.GIF", "BRAZ0001.GIF", "NORW0001.GIF", "NGRA0001.GIF", "GREC0001.GIF", "BULG0001.GIF", "ICEL0001.GIF"]
+		@capitales_otras = @capitales.shuffle
     @resultado = 0
     @preguntadas = []
     @test_mode = false
     @test_step = 0
+    @level = 5
 	end
 
 	def capital indice
@@ -22,8 +23,8 @@ class Juego
 	end
 
   def puntuar capital, pais
-    index = @capitales.index(capital.downcase)
-    @preguntadas.push(capital.downcase)
+    index = @capitales.index(capital)
+    @preguntadas.push(capital)
     if !index.nil? && @paises[index].downcase == pais.downcase
       @resultado += 1
     end
@@ -37,9 +38,9 @@ class Juego
     @resultado = 0
     if @test_mode
       @test_step = 0
-      @capitales_otras = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
+      @capitales_otras = @capitales.clone
     else 
-      @capitales_otras = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase).shuffle
+      @capitales_otras = @capitales.shuffle
     end
   end
 
@@ -52,7 +53,6 @@ class Juego
   end
 
   def get_capital
-    puts @capitales_otras
     if @test_mode == true
       capital = @capitales[@test_step]
       @test_step += 1
@@ -65,14 +65,15 @@ class Juego
   end
 
   def capitales_otras
-	return @capitales_otras
+	  return @capitales_otras
+  end
+
+  def level
+	  return @level
   end
 
 def resultado_final
-	puts "RESULTADO"
-	
-	puts (@resultado *100) / @paises.length
-	return (@resultado *100) / @paises.length
+	return (@resultado *100) / @level
 end
 
 	

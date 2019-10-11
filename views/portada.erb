@@ -1,6 +1,6 @@
 <h1>Pregunta #<%= @step %></h1>
 
-<h2><%=@capital%></h2>
+<h2><img src="http://www.flags.net/images/largeflags/<%= @capital.upcase %>"/></h2>
 
 <form method="post" action="/?step=<%= @step %>">
   <input name="pais">

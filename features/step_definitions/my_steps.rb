@@ -4,8 +4,12 @@ Dado(/^que voy a la portada$/) do
   visit "/"
 end
 
-Entonces(/^veo "(.*?)"$/) do |capital|
-  last_response.body.should =~ /#{capital}/m
+Entonces(/^veo "(.*?)"$/) do |texto|
+  last_response.body.should =~ /#{texto}/m
+end
+
+Entonces(/^veo la imagen "(.*?)"$/) do |capital|
+  last_response.should have_xpath("//img[@src=\"http://www.flags.net/images/largeflags/#{capital}\"]")
 end
 
 Cuando(/^respondo la Pregunta (\d+)$/) do |arg1|
@@ -21,6 +25,10 @@ end
 Cuando(/^respondo Pregunta con "(.*?)"$/) do |respuesta|
   fill_in("pais", :with => respuesta)
   click_button("enviar")
+end
+
+Cuando(/^hago reinicio$/) do
+  click_link("Reiniciar")
 end
 
 
