@@ -15,7 +15,7 @@ post '/' do
   @capital = @@game.capital @step
   @step = @step + 1
 
-  if @step == 3
+  if @step == 6
     erb :resultado
   else
     erb :portada
