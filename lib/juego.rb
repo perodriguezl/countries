@@ -34,10 +34,12 @@ class Juego
   end
 
   def reset
+    @resultado = 0
     if @test_mode
       @test_step = 0
-      @resultado = 0
       @capitales_otras = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
+    else 
+      @capitales_otras = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase).shuffle
     end
   end
 
@@ -65,5 +67,13 @@ class Juego
   def capitales_otras
 	return @capitales_otras
   end
+
+def resultado_final
+	puts "RESULTADO"
+	
+	puts (@resultado *100) / @paises.length
+	return (@resultado *100) / @paises.length
+end
+
 	
 end

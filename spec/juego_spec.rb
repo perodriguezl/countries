@@ -73,17 +73,17 @@ describe "Countries" do
  it "Resetear Juego para mantener resultado igual para obtener un resultado" do
 	juego = Juego.new
 	juego.test_mode false
-	juego.puntuar "buenos aires", "argentina"
 	juego.reset
+	juego.puntuar "buenos aires", "argentina"
 	expect( juego.puntos  ).to eq 1
  end
 
    it "Resetear Juego para mantener resultado igual para obtener un resultado" do
 	juego = Juego.new
 	juego.test_mode false
+	juego.reset
 	@capitales_otras_test = ["Buenos Aires", "Lima", "montevideo", "santiago", "brasilia"].map(&:downcase)
 	juego.get_capital
-	juego.reset
 	expect( @capitales_otras_test - juego.capitales_otras ).not_to eq [] 
   end
 
