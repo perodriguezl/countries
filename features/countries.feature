@@ -11,9 +11,14 @@ Escenario: Contesta la primera pregunta y le muestra la segunda
   Cuando respondo la Pregunta 1
   Entonces veo "Pregunta #2"
 
-Escenario: Valida que el en step 1 muestra Lima
-  Dado que voy a la portada en Pregunta 2
-  Entonces veo "lima"
+Escenario: Contesta la primera, segunda, tercera, cuarta y quinta pregunta, pasa a resultado
+  Dado que voy a la portada
+  Cuando respondo la Pregunta 1
+  Y respondo la Pregunta 2
+  Y respondo la Pregunta 3
+  Y respondo la Pregunta 4
+  Y respondo la Pregunta 5
+  Entonces veo "Resultado"
 
 Escenario: Contesta todas las preguntas correctamente y muestra resultado 5
   Dado que voy a la portada

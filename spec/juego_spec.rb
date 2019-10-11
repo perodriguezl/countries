@@ -32,6 +32,19 @@ describe "Countries" do
 	expect( juego.preguntadas  ).to eq ["buenos aires"]
  end
 
+ it "Pido a juego una capital, debería venir un valor distinto a nil" do
+	juego = Juego.new
+	pregunta = juego.get_capital
+	expect( pregunta  ).not_to be_nil
+ end
+
+ it "Pido a juego dos capitales, deberían ser distintas" do
+	juego = Juego.new
+	pregunta1 = juego.get_capital
+	pregunta2 = juego.get_capital
+	expect( pregunta1  ).not_to eq pregunta2
+ end
+
 end
 
 
